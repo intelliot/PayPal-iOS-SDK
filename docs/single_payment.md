@@ -36,11 +36,13 @@ This document shows sample code for using the PayPal iOS SDK's Payment API in yo
 1. Initialize the SDK and provide your Client IDs. A typical place to do this is in your app delegate's `didFinishLaunchingWithOptions:` method.
 
     ```obj-c
+    #import "PayPalMobile.h"
+    
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     {
       // ...
-      [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentProduction : @"YOUR_CLIENT_ID_FOR_PRODUCTION",
-                                                             PayPalEnvironmentSandbox : @"YOUR_CLIENT_ID_FOR_SANDBOX"}];
+      [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentProduction: @"YOUR_CLIENT_ID_FOR_PRODUCTION",
+                                                             PayPalEnvironmentSandbox: @"YOUR_CLIENT_ID_FOR_SANDBOX"}];
       // ...
       return YES;
     }
@@ -54,7 +56,7 @@ This document shows sample code for using the PayPal iOS SDK's Payment API in yo
     // SomeViewController.h
     #import "PayPalMobile.h"
 
-    @interface SomeViewController : UIViewController<PayPalPaymentDelegate>
+    @interface SomeViewController : UIViewController <PayPalPaymentDelegate>
     // ...
     @end
     ```
